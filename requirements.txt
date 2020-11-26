@@ -3,3 +3,4 @@ Flask==1.1.2
 gunicorn==19.9.0
 Flask-WTF==0.14.3
 bert-extractive-summarizer==0.5.1
+torchvision==0.4.2
