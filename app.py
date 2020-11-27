@@ -8,6 +8,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 # run_with_ngrok(app)
 
+model = Summarizer()
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -16,7 +18,6 @@ def home():
 
 @app.route("/summarize", methods=['GET', 'POST'])
 def summarize():
-	model = Summarizer()
 	if request.method == 'POST':
 		text = request.form['content']
 		result = model(body=text, ratio=0.2)
